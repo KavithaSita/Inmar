@@ -1,0 +1,2478 @@
+<?xml version='1.0' encoding='utf-8' ?>
+
+<!-- build 20182.18.0925.2120                               -->
+<workbook original-version='18.1' source-build='2018.2.2 (20182.18.0925.2120)' source-platform='win' version='18.1' xmlns:user='http://www.tableausoftware.com/xml/user'>
+  <document-format-change-manifest>
+    <IntuitiveSorting />
+  </document-format-change-manifest>
+  <preferences>
+    <preference name='ui.encoding.shelf.height' value='24' />
+    <preference name='ui.shelf.height' value='26' />
+  </preferences>
+  <datasources>
+    <datasource caption='auth_user+ (SaveReport)' inline='true' name='federated.1bq6cc301lafob1gwgc8h1w3hmkr' version='18.1'>
+      <connection class='federated'>
+        <named-connections>
+          <named-connection caption='DESKTOP-4NVO2D8\SQLEXPRESS' name='sqlserver.0mzc4nv1ot6hxc17rqvop07e0365'>
+            <connection authentication='sspi' class='sqlserver' dbname='SaveReport' minimum-driver-version='SQL Server Native Client 10.0' odbc-native-protocol='yes' one-time-sql='' port='0' server='DESKTOP-4NVO2D8\SQLEXPRESS' />
+          </named-connection>
+        </named-connections>
+        <relation join='inner' type='join'>
+          <clause type='join'>
+            <expression op='='>
+              <expression op='[consumer_id].[consumer_id_id]' />
+              <expression op='[consumer_incentive_1].[consumer_id_id]' />
+            </expression>
+          </clause>
+          <relation join='inner' type='join'>
+            <clause type='join'>
+              <expression op='='>
+                <expression op='[consumer_id].[retailer_id]' />
+                <expression op='[Retailer].[retailer_id]' />
+              </expression>
+            </clause>
+            <relation join='inner' type='join'>
+              <clause type='join'>
+                <expression op='='>
+                  <expression op='[auth_user].[clientid]' />
+                  <expression op='[consumer_id].[clientid]' />
+                </expression>
+              </clause>
+              <relation connection='sqlserver.0mzc4nv1ot6hxc17rqvop07e0365' name='auth_user' table='[dbo].[auth_user]' type='table' />
+              <relation connection='sqlserver.0mzc4nv1ot6hxc17rqvop07e0365' name='consumer_id' table='[dbo].[consumer_id]' type='table' />
+            </relation>
+            <relation connection='sqlserver.0mzc4nv1ot6hxc17rqvop07e0365' name='Retailer' table='[dbo].[Retailer]' type='table' />
+          </relation>
+          <relation connection='sqlserver.0mzc4nv1ot6hxc17rqvop07e0365' name='consumer_incentive_1' table='[dbo].[consumer_incentive_1]' type='table' />
+        </relation>
+        <cols>
+          <map key='[abbreviation]' value='[Retailer].[abbreviation]' />
+          <map key='[account]' value='[Retailer].[account]' />
+          <map key='[clientid (consumer_id)]' value='[consumer_id].[clientid]' />
+          <map key='[clientid (consumer_incentive_1)]' value='[consumer_incentive_1].[clientid]' />
+          <map key='[clientid]' value='[auth_user].[clientid]' />
+          <map key='[clip_timestamp]' value='[consumer_incentive_1].[clip_timestamp]' />
+          <map key='[consumer_id]' value='[consumer_id].[consumer_id]' />
+          <map key='[consumer_id_id (consumer_incentive_1)]' value='[consumer_incentive_1].[consumer_id_id]' />
+          <map key='[consumer_id_id]' value='[consumer_id].[consumer_id_id]' />
+          <map key='[consumer_id_type]' value='[consumer_id].[consumer_id_type]' />
+          <map key='[consumer_incentive_id]' value='[consumer_incentive_1].[consumer_incentive_id]' />
+          <map key='[consumer_metadata_ind]' value='[Retailer].[consumer_metadata_ind]' />
+          <map key='[contact_id]' value='[Retailer].[contact_id]' />
+          <map key='[created_by]' value='[consumer_incentive_1].[created_by]' />
+          <map key='[created_source]' value='[consumer_incentive_1].[created_source]' />
+          <map key='[created_timestamp]' value='[consumer_incentive_1].[created_timestamp]' />
+          <map key='[creation_source_id]' value='[consumer_id].[creation_source_id]' />
+          <map key='[creation_timestamp]' value='[consumer_id].[creation_timestamp]' />
+          <map key='[date_joined]' value='[auth_user].[date_joined]' />
+          <map key='[default_password]' value='[Retailer].[default_password]' />
+          <map key='[description]' value='[Retailer].[description]' />
+          <map key='[dynamic_display_end_date]' value='[consumer_incentive_1].[dynamic_display_end_date]' />
+          <map key='[dynamic_display_start_date]' value='[consumer_incentive_1].[dynamic_display_start_date]' />
+          <map key='[email]' value='[auth_user].[email]' />
+          <map key='[extended_value]' value='[consumer_id].[extended_value]' />
+          <map key='[external_retailer_id]' value='[Retailer].[external_retailer_id]' />
+          <map key='[first_name]' value='[auth_user].[first_name]' />
+          <map key='[house_holding_ind]' value='[Retailer].[house_holding_ind]' />
+          <map key='[id]' value='[auth_user].[id]' />
+          <map key='[incentive_clip_type_id]' value='[consumer_incentive_1].[incentive_clip_type_id]' />
+          <map key='[incentive_id]' value='[consumer_incentive_1].[incentive_id]' />
+          <map key='[inmar_managed_flag]' value='[Retailer].[inmar_managed_flag]' />
+          <map key='[inmar_pos_flag]' value='[Retailer].[inmar_pos_flag]' />
+          <map key='[inmar_registration_flag]' value='[Retailer].[inmar_registration_flag]' />
+          <map key='[is_active]' value='[auth_user].[is_active]' />
+          <map key='[is_staff]' value='[auth_user].[is_staff]' />
+          <map key='[is_superuser]' value='[auth_user].[is_superuser]' />
+          <map key='[last_login]' value='[auth_user].[last_login]' />
+          <map key='[last_name]' value='[auth_user].[last_name]' />
+          <map key='[live_ind]' value='[Retailer].[live_ind]' />
+          <map key='[login_id]' value='[consumer_id].[login_id]' />
+          <map key='[logo]' value='[Retailer].[logo]' />
+          <map key='[media_property_id]' value='[consumer_incentive_1].[media_property_id]' />
+          <map key='[password]' value='[auth_user].[password]' />
+          <map key='[pin]' value='[consumer_id].[pin]' />
+          <map key='[pos_system]' value='[Retailer].[pos_system]' />
+          <map key='[primary_loyalty_type_id]' value='[Retailer].[primary_loyalty_type_id]' />
+          <map key='[private_label_pgm_ind]' value='[Retailer].[private_label_pgm_ind]' />
+          <map key='[redeem_count]' value='[consumer_incentive_1].[redeem_count]' />
+          <map key='[redeem_date]' value='[consumer_incentive_1].[redeem_date]' />
+          <map key='[redeemable_end_date]' value='[consumer_incentive_1].[redeemable_end_date]' />
+          <map key='[redeemable_start_date]' value='[consumer_incentive_1].[redeemable_start_date]' />
+          <map key='[redeemer_consumer_id_id]' value='[consumer_incentive_1].[redeemer_consumer_id_id]' />
+          <map key='[registration_system]' value='[Retailer].[registration_system]' />
+          <map key='[retailer_id (Retailer)]' value='[Retailer].[retailer_id]' />
+          <map key='[retailer_id (consumer_incentive_1)]' value='[consumer_incentive_1].[retailer_id]' />
+          <map key='[retailer_id]' value='[consumer_id].[retailer_id]' />
+          <map key='[retailer_party_id]' value='[Retailer].[retailer_party_id]' />
+          <map key='[rk]' value='[consumer_incentive_1].[rk]' />
+          <map key='[selection_date]' value='[consumer_incentive_1].[selection_date]' />
+          <map key='[site_id]' value='[consumer_incentive_1].[site_id]' />
+          <map key='[slogan]' value='[Retailer].[slogan]' />
+          <map key='[status]' value='[consumer_incentive_1].[status]' />
+          <map key='[targeted_offer_ind]' value='[Retailer].[targeted_offer_ind]' />
+          <map key='[transmonth]' value='[consumer_incentive_1].[transmonth]' />
+          <map key='[transyear]' value='[consumer_incentive_1].[transyear]' />
+          <map key='[updated_by]' value='[consumer_incentive_1].[updated_by]' />
+          <map key='[updated_source]' value='[consumer_incentive_1].[updated_source]' />
+          <map key='[updated_timestamp (consumer_incentive_1)]' value='[consumer_incentive_1].[updated_timestamp]' />
+          <map key='[updated_timestamp]' value='[consumer_id].[updated_timestamp]' />
+          <map key='[username]' value='[auth_user].[username]' />
+          <map key='[value (consumer_incentive_1)]' value='[consumer_incentive_1].[value]' />
+          <map key='[value]' value='[consumer_id].[value]' />
+          <map key='[withdrawn_datetime]' value='[consumer_incentive_1].[withdrawn_datetime]' />
+        </cols>
+        <metadata-records>
+          <metadata-record class='column'>
+            <remote-name>id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[id]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>id</remote-alias>
+            <ordinal>1</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>username</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[username]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>username</remote-alias>
+            <ordinal>2</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>first_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[first_name]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>first_name</remote-alias>
+            <ordinal>3</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_name</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[last_name]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>last_name</remote-alias>
+            <ordinal>4</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>email</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[email]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>email</remote-alias>
+            <ordinal>5</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>password</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[password]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>password</remote-alias>
+            <ordinal>6</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_staff</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[is_staff]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>is_staff</remote-alias>
+            <ordinal>7</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_active</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[is_active]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>is_active</remote-alias>
+            <ordinal>8</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>is_superuser</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[is_superuser]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>is_superuser</remote-alias>
+            <ordinal>9</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>last_login</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[last_login]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>last_login</remote-alias>
+            <ordinal>10</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>date_joined</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[date_joined]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>date_joined</remote-alias>
+            <ordinal>11</ordinal>
+            <local-type>date</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_DATE&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_DATE&quot;</attribute>
+              <attribute datatype='boolean' name='TypeIsDateTime2orDate'>true</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clientid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clientid]</local-name>
+            <parent-name>[auth_user]</parent-name>
+            <remote-alias>clientid</remote-alias>
+            <ordinal>12</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>consumer_id_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[consumer_id_id]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>consumer_id_id</remote-alias>
+            <ordinal>14</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>consumer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[consumer_id]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>consumer_id</remote-alias>
+            <ordinal>15</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creation_timestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[creation_timestamp]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>creation_timestamp</remote-alias>
+            <ordinal>16</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>creation_source_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[creation_source_id]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>creation_source_id</remote-alias>
+            <ordinal>17</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>consumer_id_type</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[consumer_id_type]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>consumer_id_type</remote-alias>
+            <ordinal>18</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[value]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>19</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>100</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>extended_value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[extended_value]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>extended_value</remote-alias>
+            <ordinal>20</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pin</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pin]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>pin</remote-alias>
+            <ordinal>21</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>retailer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[retailer_id]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>retailer_id</remote-alias>
+            <ordinal>22</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>login_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[login_id]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>login_id</remote-alias>
+            <ordinal>23</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated_timestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updated_timestamp]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>updated_timestamp</remote-alias>
+            <ordinal>24</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clientid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clientid (consumer_id)]</local-name>
+            <parent-name>[consumer_id]</parent-name>
+            <remote-alias>clientid</remote-alias>
+            <ordinal>25</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>retailer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[retailer_id (Retailer)]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>retailer_id</remote-alias>
+            <ordinal>27</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>contact_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[contact_id]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>contact_id</remote-alias>
+            <ordinal>28</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>retailer_party_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[retailer_party_id]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>retailer_party_id</remote-alias>
+            <ordinal>29</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>description</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[description]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>description</remote-alias>
+            <ordinal>30</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>slogan</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[slogan]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>slogan</remote-alias>
+            <ordinal>31</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>logo</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[logo]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>logo</remote-alias>
+            <ordinal>32</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>external_retailer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[external_retailer_id]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>external_retailer_id</remote-alias>
+            <ordinal>33</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>abbreviation</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[abbreviation]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>abbreviation</remote-alias>
+            <ordinal>34</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>account</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[account]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>account</remote-alias>
+            <ordinal>35</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>inmar_pos_flag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[inmar_pos_flag]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>inmar_pos_flag</remote-alias>
+            <ordinal>36</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>pos_system</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[pos_system]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>pos_system</remote-alias>
+            <ordinal>37</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>inmar_registration_flag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[inmar_registration_flag]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>inmar_registration_flag</remote-alias>
+            <ordinal>38</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>registration_system</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[registration_system]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>registration_system</remote-alias>
+            <ordinal>39</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>110</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>house_holding_ind</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[house_holding_ind]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>house_holding_ind</remote-alias>
+            <ordinal>40</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>private_label_pgm_ind</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[private_label_pgm_ind]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>private_label_pgm_ind</remote-alias>
+            <ordinal>41</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>default_password</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[default_password]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>default_password</remote-alias>
+            <ordinal>42</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>live_ind</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[live_ind]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>live_ind</remote-alias>
+            <ordinal>43</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>primary_loyalty_type_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[primary_loyalty_type_id]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>primary_loyalty_type_id</remote-alias>
+            <ordinal>44</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>inmar_managed_flag</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[inmar_managed_flag]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>inmar_managed_flag</remote-alias>
+            <ordinal>45</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>consumer_metadata_ind</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[consumer_metadata_ind]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>consumer_metadata_ind</remote-alias>
+            <ordinal>46</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>targeted_offer_ind</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[targeted_offer_ind]</local-name>
+            <parent-name>[Retailer]</parent-name>
+            <remote-alias>targeted_offer_ind</remote-alias>
+            <ordinal>47</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>consumer_incentive_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[consumer_incentive_id]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>consumer_incentive_id</remote-alias>
+            <ordinal>49</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>consumer_id_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[consumer_id_id (consumer_incentive_1)]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>consumer_id_id</remote-alias>
+            <ordinal>50</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incentive_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incentive_id]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>incentive_id</remote-alias>
+            <ordinal>51</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>status</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[status]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>status</remote-alias>
+            <ordinal>52</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>value</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[value (consumer_incentive_1)]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>value</remote-alias>
+            <ordinal>53</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>selection_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[selection_date]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>selection_date</remote-alias>
+            <ordinal>54</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>redeem_count</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[redeem_count]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>redeem_count</remote-alias>
+            <ordinal>55</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>redeem_date</remote-name>
+            <remote-type>7</remote-type>
+            <local-name>[redeem_date]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>redeem_date</remote-alias>
+            <ordinal>56</ordinal>
+            <local-type>datetime</local-type>
+            <aggregation>Year</aggregation>
+            <contains-null>true</contains-null>
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_TYPE_TIMESTAMP&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_TYPE_TIMESTAMP&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>retailer_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[retailer_id (consumer_incentive_1)]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>retailer_id</remote-alias>
+            <ordinal>57</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>withdrawn_datetime</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[withdrawn_datetime]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>withdrawn_datetime</remote-alias>
+            <ordinal>58</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>redeemable_start_date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[redeemable_start_date]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>redeemable_start_date</remote-alias>
+            <ordinal>59</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>redeemable_end_date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[redeemable_end_date]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>redeemable_end_date</remote-alias>
+            <ordinal>60</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>site_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[site_id]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>site_id</remote-alias>
+            <ordinal>61</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dynamic_display_start_date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[dynamic_display_start_date]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>dynamic_display_start_date</remote-alias>
+            <ordinal>62</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>dynamic_display_end_date</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[dynamic_display_end_date]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>dynamic_display_end_date</remote-alias>
+            <ordinal>63</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>incentive_clip_type_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[incentive_clip_type_id]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>incentive_clip_type_id</remote-alias>
+            <ordinal>64</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>redeemer_consumer_id_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[redeemer_consumer_id_id]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>redeemer_consumer_id_id</remote-alias>
+            <ordinal>65</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>media_property_id</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[media_property_id]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>media_property_id</remote-alias>
+            <ordinal>66</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clip_timestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clip_timestamp]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>clip_timestamp</remote-alias>
+            <ordinal>67</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_by</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[created_by]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>created_by</remote-alias>
+            <ordinal>68</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[created_source]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>created_source</remote-alias>
+            <ordinal>69</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>created_timestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[created_timestamp]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>created_timestamp</remote-alias>
+            <ordinal>70</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated_by</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updated_by]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>updated_by</remote-alias>
+            <ordinal>71</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated_source</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updated_source]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>updated_source</remote-alias>
+            <ordinal>72</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>updated_timestamp</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[updated_timestamp (consumer_incentive_1)]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>updated_timestamp</remote-alias>
+            <ordinal>73</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>clientid</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[clientid (consumer_incentive_1)]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>clientid</remote-alias>
+            <ordinal>74</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transyear</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[transyear]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>transyear</remote-alias>
+            <ordinal>75</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>transmonth</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[transmonth]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>transmonth</remote-alias>
+            <ordinal>76</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+          <metadata-record class='column'>
+            <remote-name>rk</remote-name>
+            <remote-type>129</remote-type>
+            <local-name>[rk]</local-name>
+            <parent-name>[consumer_incentive_1]</parent-name>
+            <remote-alias>rk</remote-alias>
+            <ordinal>77</ordinal>
+            <local-type>string</local-type>
+            <aggregation>Count</aggregation>
+            <width>50</width>
+            <contains-null>true</contains-null>
+            <padded-semantics>true</padded-semantics>
+            <collation flag='2147483649' name='LEN_RUS_S2_VWIN' />
+            <attributes>
+              <attribute datatype='string' name='DebugRemoteType'>&quot;SQL_VARCHAR&quot;</attribute>
+              <attribute datatype='string' name='DebugWireType'>&quot;SQL_C_CHAR&quot;</attribute>
+              <attribute datatype='string' name='TypeIsVarchar'>&quot;true&quot;</attribute>
+            </attributes>
+          </metadata-record>
+        </metadata-records>
+      </connection>
+      <aliases enabled='yes' />
+      <column datatype='integer' name='[Number of Records]' role='measure' type='quantitative' user:auto-column='numrec'>
+        <calculation class='tableau' formula='1' />
+      </column>
+      <column caption='Abbreviation' datatype='string' name='[abbreviation]' role='dimension' type='nominal' />
+      <column caption='Account' datatype='string' name='[account]' role='dimension' type='nominal' />
+      <column caption='Clientid (Consumer Id)' datatype='string' name='[clientid (consumer_id)]' role='dimension' type='nominal' />
+      <column caption='Clientid (Consumer Incentive 1)' datatype='string' name='[clientid (consumer_incentive_1)]' role='dimension' type='nominal' />
+      <column caption='Clientid' datatype='string' name='[clientid]' role='dimension' type='nominal' />
+      <column caption='Clip Timestamp' datatype='string' name='[clip_timestamp]' role='dimension' type='nominal' />
+      <column caption='Consumer Id' datatype='string' name='[consumer_id]' role='dimension' type='nominal' />
+      <column caption='Consumer Id Id (Consumer Incentive 1)' datatype='string' name='[consumer_id_id (consumer_incentive_1)]' role='dimension' type='nominal' />
+      <column caption='Consumer Id Id' datatype='string' name='[consumer_id_id]' role='dimension' type='nominal' />
+      <column caption='Consumer Id Type' datatype='string' name='[consumer_id_type]' role='dimension' type='nominal' />
+      <column caption='Consumer Incentive Id' datatype='string' name='[consumer_incentive_id]' role='dimension' type='nominal' />
+      <column caption='Consumer Metadata Ind' datatype='string' name='[consumer_metadata_ind]' role='dimension' type='nominal' />
+      <column caption='Contact Id' datatype='string' name='[contact_id]' role='dimension' type='nominal' />
+      <column caption='Created By' datatype='string' name='[created_by]' role='dimension' type='nominal' />
+      <column caption='Created Source' datatype='string' name='[created_source]' role='dimension' type='nominal' />
+      <column caption='Created Timestamp' datatype='string' name='[created_timestamp]' role='dimension' type='nominal' />
+      <column caption='Creation Source Id' datatype='string' name='[creation_source_id]' role='dimension' type='nominal' />
+      <column caption='Creation Timestamp' datatype='string' name='[creation_timestamp]' role='dimension' type='nominal' />
+      <column caption='Date Joined' datatype='date' name='[date_joined]' role='dimension' type='ordinal' />
+      <column caption='Default Password' datatype='string' name='[default_password]' role='dimension' type='nominal' />
+      <column caption='Description' datatype='string' name='[description]' role='dimension' type='nominal' />
+      <column caption='Dynamic Display End Date' datatype='string' name='[dynamic_display_end_date]' role='dimension' type='nominal' />
+      <column caption='Dynamic Display Start Date' datatype='string' name='[dynamic_display_start_date]' role='dimension' type='nominal' />
+      <column caption='Email' datatype='string' name='[email]' role='dimension' type='nominal' />
+      <column caption='Extended Value' datatype='string' name='[extended_value]' role='dimension' type='nominal' />
+      <column caption='External Retailer Id' datatype='string' name='[external_retailer_id]' role='dimension' type='nominal' />
+      <column caption='First Name' datatype='string' name='[first_name]' role='dimension' type='nominal' />
+      <column caption='House Holding Ind' datatype='string' name='[house_holding_ind]' role='dimension' type='nominal' />
+      <column caption='Id' datatype='string' name='[id]' role='dimension' type='nominal' />
+      <column caption='Incentive Clip Type Id' datatype='string' name='[incentive_clip_type_id]' role='dimension' type='nominal' />
+      <column caption='Incentive Id' datatype='string' name='[incentive_id]' role='dimension' type='nominal' />
+      <column caption='Inmar Managed Flag' datatype='string' name='[inmar_managed_flag]' role='dimension' type='nominal' />
+      <column caption='Inmar Pos Flag' datatype='string' name='[inmar_pos_flag]' role='dimension' type='nominal' />
+      <column caption='Inmar Registration Flag' datatype='string' name='[inmar_registration_flag]' role='dimension' type='nominal' />
+      <column caption='Is Active' datatype='string' name='[is_active]' role='dimension' type='nominal' />
+      <column caption='Is Staff' datatype='string' name='[is_staff]' role='dimension' type='nominal' />
+      <column caption='Is Superuser' datatype='string' name='[is_superuser]' role='dimension' type='nominal' />
+      <column caption='Last Login' datatype='string' name='[last_login]' role='dimension' type='nominal' />
+      <column caption='Last Name' datatype='string' name='[last_name]' role='dimension' type='nominal' />
+      <column caption='Live Ind' datatype='string' name='[live_ind]' role='dimension' type='nominal' />
+      <column caption='Login Id' datatype='string' name='[login_id]' role='dimension' type='nominal' />
+      <column caption='Logo' datatype='string' name='[logo]' role='dimension' type='nominal' />
+      <column caption='Media Property Id' datatype='string' name='[media_property_id]' role='dimension' type='nominal' />
+      <column caption='Password' datatype='string' name='[password]' role='dimension' type='nominal' />
+      <column caption='Pin' datatype='string' name='[pin]' role='dimension' type='nominal' />
+      <column caption='Pos System' datatype='string' name='[pos_system]' role='dimension' type='nominal' />
+      <column caption='Primary Loyalty Type Id' datatype='string' name='[primary_loyalty_type_id]' role='dimension' type='nominal' />
+      <column caption='Private Label Pgm Ind' datatype='string' name='[private_label_pgm_ind]' role='dimension' type='nominal' />
+      <column caption='Redeem Count' datatype='string' name='[redeem_count]' role='dimension' type='nominal' />
+      <column caption='Redeem Date' datatype='datetime' name='[redeem_date]' role='dimension' type='ordinal' />
+      <column caption='Redeemable End Date' datatype='string' name='[redeemable_end_date]' role='dimension' type='nominal' />
+      <column caption='Redeemable Start Date' datatype='string' name='[redeemable_start_date]' role='dimension' type='nominal' />
+      <column caption='Redeemer Consumer Id Id' datatype='string' name='[redeemer_consumer_id_id]' role='dimension' type='nominal' />
+      <column caption='Registration System' datatype='string' name='[registration_system]' role='dimension' type='nominal' />
+      <column caption='retailer id (Retailer)' datatype='string' name='[retailer_id (Retailer)]' role='dimension' type='nominal' />
+      <column caption='Retailer Id (Consumer Incentive 1)' datatype='string' name='[retailer_id (consumer_incentive_1)]' role='dimension' type='nominal' />
+      <column caption='Retailer Id' datatype='string' name='[retailer_id]' role='dimension' type='nominal' />
+      <column caption='Retailer Party Id' datatype='string' name='[retailer_party_id]' role='dimension' type='nominal' />
+      <column caption='Rk' datatype='string' name='[rk]' role='dimension' type='nominal' />
+      <column caption='Selection Date' datatype='datetime' name='[selection_date]' role='dimension' type='ordinal' />
+      <column caption='Site Id' datatype='string' name='[site_id]' role='dimension' type='nominal' />
+      <column caption='Slogan' datatype='string' name='[slogan]' role='dimension' type='nominal' />
+      <column caption='Status' datatype='string' name='[status]' role='dimension' type='nominal' />
+      <column caption='Targeted Offer Ind' datatype='string' name='[targeted_offer_ind]' role='dimension' type='nominal' />
+      <column caption='Transmonth' datatype='string' name='[transmonth]' role='dimension' type='nominal' />
+      <column caption='Transyear' datatype='string' name='[transyear]' role='dimension' type='nominal' />
+      <column caption='Updated By' datatype='string' name='[updated_by]' role='dimension' type='nominal' />
+      <column caption='Updated Source' datatype='string' name='[updated_source]' role='dimension' type='nominal' />
+      <column caption='Updated Timestamp (Consumer Incentive 1)' datatype='string' name='[updated_timestamp (consumer_incentive_1)]' role='dimension' type='nominal' />
+      <column caption='Updated Timestamp' datatype='string' name='[updated_timestamp]' role='dimension' type='nominal' />
+      <column caption='Username' datatype='string' name='[username]' role='dimension' type='nominal' />
+      <column caption='Value (Consumer Incentive 1)' datatype='string' name='[value (consumer_incentive_1)]' role='dimension' type='nominal' />
+      <column caption='Value' datatype='string' name='[value]' role='dimension' type='nominal' />
+      <column caption='Withdrawn Datetime' datatype='string' name='[withdrawn_datetime]' role='dimension' type='nominal' />
+      <layout dim-ordering='alphabetic' dim-percentage='0.536264' measure-ordering='alphabetic' measure-percentage='0.413187' parameter-percentage='0.0505495' show-structure='true' />
+      <semantic-values>
+        <semantic-value key='[Country].[Name]' value='&quot;India&quot;' />
+      </semantic-values>
+    </datasource>
+    <datasource hasconnection='false' inline='true' name='Parameters' version='18.1'>
+      <aliases enabled='yes' />
+      <column caption='Retailer' datatype='integer' name='[Parameter 1]' param-domain-type='list' role='measure' type='quantitative' value='1'>
+        <calculation class='tableau' formula='1' />
+        <members>
+          <member value='1' />
+          <member value='2' />
+          <member value='3' />
+          <member value='4' />
+          <member value='5' />
+          <member value='6' />
+          <member value='7' />
+          <member value='8' />
+          <member value='10' />
+          <member value='11' />
+          <member value='12' />
+          <member value='13' />
+          <member value='16' />
+          <member value='17' />
+          <member value='18' />
+          <member value='19' />
+          <member value='20' />
+          <member value='21' />
+          <member value='22' />
+          <member value='23' />
+          <member value='24' />
+          <member value='25' />
+          <member value='26' />
+          <member value='27' />
+          <member value='28' />
+          <member value='29' />
+          <member value='30' />
+          <member value='31' />
+          <member value='32' />
+          <member value='33' />
+          <member value='34' />
+          <member value='35' />
+          <member value='36' />
+          <member value='37' />
+          <member value='38' />
+          <member value='39' />
+          <member value='40' />
+          <member value='41' />
+          <member value='42' />
+          <member value='43' />
+          <member value='44' />
+          <member value='45' />
+          <member value='46' />
+          <member value='47' />
+          <member value='48' />
+          <member value='49' />
+          <member value='50' />
+          <member value='51' />
+          <member value='52' />
+          <member value='53' />
+          <member value='54' />
+          <member value='55' />
+          <member value='56' />
+          <member value='57' />
+          <member value='58' />
+          <member value='59' />
+          <member value='60' />
+          <member value='61' />
+          <member value='63' />
+          <member value='64' />
+          <member value='65' />
+          <member value='66' />
+          <member value='67' />
+          <member value='68' />
+          <member value='69' />
+          <member value='70' />
+          <member value='71' />
+          <member value='72' />
+          <member value='73' />
+          <member value='74' />
+          <member value='75' />
+          <member value='76' />
+          <member value='77' />
+          <member value='78' />
+          <member value='79' />
+          <member value='80' />
+          <member value='81' />
+          <member value='82' />
+          <member value='83' />
+          <member value='84' />
+          <member value='85' />
+          <member value='86' />
+          <member value='87' />
+          <member value='88' />
+          <member value='89' />
+          <member value='90' />
+          <member value='91' />
+          <member value='92' />
+          <member value='93' />
+          <member value='94' />
+          <member value='95' />
+          <member value='96' />
+          <member value='97' />
+          <member value='98' />
+          <member value='99' />
+          <member value='100' />
+          <member value='101' />
+          <member value='102' />
+          <member value='103' />
+          <member value='104' />
+          <member value='105' />
+          <member value='106' />
+          <member value='107' />
+          <member value='108' />
+          <member value='109' />
+          <member value='110' />
+          <member value='111' />
+          <member value='112' />
+          <member value='113' />
+          <member value='114' />
+          <member value='115' />
+          <member value='116' />
+          <member value='117' />
+          <member value='118' />
+          <member value='119' />
+          <member value='121' />
+          <member value='122' />
+          <member value='123' />
+          <member value='124' />
+          <member value='125' />
+          <member value='126' />
+          <member value='127' />
+          <member value='128' />
+          <member value='129' />
+          <member value='130' />
+          <member value='131' />
+          <member value='132' />
+          <member value='133' />
+          <member value='134' />
+          <member value='135' />
+          <member value='136' />
+          <member value='137' />
+          <member value='138' />
+          <member value='139' />
+          <member value='140' />
+          <member value='141' />
+          <member value='142' />
+          <member value='143' />
+          <member value='144' />
+          <member value='145' />
+          <member value='146' />
+          <member value='147' />
+          <member value='148' />
+          <member value='149' />
+          <member value='150' />
+          <member value='151' />
+          <member value='152' />
+          <member value='153' />
+          <member value='154' />
+          <member value='155' />
+          <member value='156' />
+          <member value='157' />
+          <member value='158' />
+          <member value='159' />
+          <member value='160' />
+          <member value='161' />
+          <member value='162' />
+          <member value='163' />
+          <member value='164' />
+          <member value='165' />
+          <member value='166' />
+          <member value='167' />
+          <member value='168' />
+          <member value='169' />
+          <member value='170' />
+          <member value='171' />
+          <member value='172' />
+          <member value='173' />
+          <member value='174' />
+          <member value='175' />
+          <member value='176' />
+          <member value='177' />
+          <member value='178' />
+          <member value='179' />
+          <member value='180' />
+          <member value='181' />
+          <member value='182' />
+          <member value='183' />
+          <member value='184' />
+          <member value='185' />
+          <member value='186' />
+          <member value='187' />
+          <member value='188' />
+          <member value='189' />
+          <member value='190' />
+          <member value='191' />
+          <member value='192' />
+          <member value='193' />
+          <member value='194' />
+          <member value='195' />
+          <member value='196' />
+          <member value='197' />
+          <member value='198' />
+          <member value='199' />
+          <member value='200' />
+          <member value='201' />
+          <member value='202' />
+          <member value='203' />
+          <member value='204' />
+          <member value='205' />
+          <member value='206' />
+          <member value='207' />
+          <member value='208' />
+          <member value='209' />
+          <member value='210' />
+          <member value='211' />
+          <member value='212' />
+          <member value='213' />
+          <member value='214' />
+          <member value='215' />
+          <member value='216' />
+          <member value='217' />
+          <member value='218' />
+          <member value='219' />
+          <member value='220' />
+          <member value='221' />
+          <member value='222' />
+          <member value='223' />
+          <member value='224' />
+          <member value='225' />
+          <member value='226' />
+          <member value='227' />
+          <member value='228' />
+          <member value='229' />
+          <member value='230' />
+          <member value='231' />
+          <member value='232' />
+          <member value='233' />
+          <member value='234' />
+          <member value='235' />
+          <member value='236' />
+          <member value='237' />
+          <member value='238' />
+          <member value='240' />
+          <member value='241' />
+          <member value='242' />
+          <member value='243' />
+          <member value='244' />
+          <member value='245' />
+          <member value='246' />
+          <member value='247' />
+          <member value='248' />
+          <member value='249' />
+          <member value='250' />
+          <member value='251' />
+          <member value='252' />
+          <member value='253' />
+          <member value='254' />
+          <member value='255' />
+          <member value='257' />
+          <member value='258' />
+          <member value='259' />
+          <member value='260' />
+          <member value='261' />
+          <member value='262' />
+          <member value='263' />
+          <member value='264' />
+          <member value='265' />
+          <member value='266' />
+          <member value='267' />
+          <member value='268' />
+          <member value='269' />
+          <member value='270' />
+          <member value='271' />
+          <member value='272' />
+          <member value='273' />
+          <member value='274' />
+          <member value='275' />
+          <member value='276' />
+          <member value='277' />
+          <member value='278' />
+          <member value='279' />
+          <member value='280' />
+          <member value='281' />
+          <member value='282' />
+          <member value='283' />
+          <member value='284' />
+          <member value='285' />
+          <member value='286' />
+          <member value='287' />
+          <member value='288' />
+          <member value='289' />
+          <member value='290' />
+          <member value='292' />
+          <member value='294' />
+          <member value='295' />
+          <member value='296' />
+          <member value='297' />
+          <member value='298' />
+          <member value='299' />
+          <member value='300' />
+          <member value='301' />
+          <member value='302' />
+          <member value='303' />
+          <member value='304' />
+          <member value='305' />
+          <member value='306' />
+          <member value='307' />
+          <member value='308' />
+          <member value='309' />
+          <member value='311' />
+          <member value='312' />
+          <member value='313' />
+          <member value='1569' />
+        </members>
+      </column>
+    </datasource>
+  </datasources>
+  <worksheets>
+    <worksheet name='Sheet 1'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='auth_user+ (SaveReport)' name='federated.1bq6cc301lafob1gwgc8h1w3hmkr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1bq6cc301lafob1gwgc8h1w3hmkr'>
+            <column-instance column='[consumer_id]' derivation='Count' name='[cnt:consumer_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Consumer Id' datatype='string' name='[consumer_id]' role='dimension' type='nominal' />
+            <column caption='Consumer Id Id' datatype='string' name='[consumer_id_id]' role='dimension' type='nominal' />
+            <column caption='Date Joined' datatype='date' name='[date_joined]' role='dimension' type='ordinal' />
+            <column caption='Inmar Registration Flag' datatype='string' name='[inmar_registration_flag]' role='dimension' type='nominal' />
+            <column-instance column='[date_joined]' derivation='Month' name='[mn:date_joined:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[consumer_id_id]' derivation='None' name='[none:consumer_id_id:nk]' pivot='key' type='nominal' />
+            <column-instance column='[inmar_registration_flag]' derivation='None' name='[none:inmar_registration_flag:nk]' pivot='key' type='nominal' />
+            <column-instance column='[date_joined]' derivation='Quarter' name='[qr:date_joined:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[date_joined]' derivation='Year' name='[yr:date_joined:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <aggregation value='true' />
+        </view>
+        <style />
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:inmar_registration_flag:nk]' />
+            </encodings>
+          </pane>
+        </panes>
+        <rows>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[cnt:consumer_id:qk]</rows>
+        <cols>([federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:consumer_id_id:nk] / ([federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:date_joined:ok] / ([federated.1bq6cc301lafob1gwgc8h1w3hmkr].[qr:date_joined:ok] / [federated.1bq6cc301lafob1gwgc8h1w3hmkr].[mn:date_joined:ok])))</cols>
+      </table>
+    </worksheet>
+    <worksheet name='Sheet 2'>
+      <table>
+        <view>
+          <datasources>
+            <datasource caption='auth_user+ (SaveReport)' name='federated.1bq6cc301lafob1gwgc8h1w3hmkr' />
+          </datasources>
+          <datasource-dependencies datasource='federated.1bq6cc301lafob1gwgc8h1w3hmkr'>
+            <column-instance column='[consumer_id]' derivation='Count' name='[cnt:consumer_id:qk]' pivot='key' type='quantitative' />
+            <column caption='Consumer Id' datatype='string' name='[consumer_id]' role='dimension' type='nominal' />
+            <column caption='Date Joined' datatype='date' name='[date_joined]' role='dimension' type='ordinal' />
+            <column-instance column='[date_joined]' derivation='Month' name='[mn:date_joined:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[selection_date]' derivation='Quarter' name='[qr:selection_date:ok]' pivot='key' type='ordinal' />
+            <column caption='Redeem Date' datatype='datetime' name='[redeem_date]' role='dimension' type='ordinal' />
+            <column caption='Selection Date' datatype='datetime' name='[selection_date]' role='dimension' type='ordinal' />
+            <column-instance column='[date_joined]' derivation='Year' name='[yr:date_joined:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[redeem_date]' derivation='Year' name='[yr:redeem_date:ok]' pivot='key' type='ordinal' />
+            <column-instance column='[selection_date]' derivation='Year' name='[yr:selection_date:ok]' pivot='key' type='ordinal' />
+          </datasource-dependencies>
+          <columns>
+            <shelf-sort direction='DESC' measure-to-sort-by='[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[cnt:consumer_id:qk]'>
+              <dimensions-to-sort>
+                <dimension>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[qr:selection_date:ok]</dimension>
+              </dimensions-to-sort>
+            </shelf-sort>
+          </columns>
+          <aggregation value='true' />
+        </view>
+        <style>
+          <style-rule element='cell'>
+            <format attr='width' field='[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:selection_date:ok]' value='35' />
+          </style-rule>
+        </style>
+        <panes>
+          <pane selection-relaxation-option='selection-relaxation-allow'>
+            <view>
+              <breakdown value='auto' />
+            </view>
+            <mark class='Bar' />
+            <encodings>
+              <color column='[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:date_joined:ok]' />
+            </encodings>
+            <style>
+              <style-rule element='pane'>
+                <format attr='minwidth' value='-1' />
+                <format attr='maxwidth' value='-1' />
+              </style-rule>
+            </style>
+          </pane>
+        </panes>
+        <rows>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[cnt:consumer_id:qk]</rows>
+        <cols>([federated.1bq6cc301lafob1gwgc8h1w3hmkr].[mn:date_joined:ok] / ([federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:redeem_date:ok] / ([federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:selection_date:ok] / [federated.1bq6cc301lafob1gwgc8h1w3hmkr].[qr:selection_date:ok])))</cols>
+      </table>
+    </worksheet>
+  </worksheets>
+  <windows source-height='30'>
+    <window class='worksheet' name='Sheet 1'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:inmar_registration_flag:nk]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:Calculation_1646628662590476288:qk]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:consumer_id:nk]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:inmar_registration_flag:nk]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:selection_date:nk]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:date_joined:ok]</field>
+          </color-one-way>
+        </highlight>
+        <default-map-tool-selection tool='2' />
+      </viewpoint>
+    </window>
+    <window class='worksheet' maximized='true' name='Sheet 2'>
+      <cards>
+        <edge name='left'>
+          <strip size='160'>
+            <card type='pages' />
+            <card type='filters' />
+            <card type='marks' />
+          </strip>
+        </edge>
+        <edge name='top'>
+          <strip size='2147483647'>
+            <card type='columns' />
+          </strip>
+          <strip size='2147483647'>
+            <card type='rows' />
+          </strip>
+          <strip size='31'>
+            <card type='title' />
+          </strip>
+        </edge>
+        <edge name='right'>
+          <strip size='160'>
+            <card pane-specification-id='0' param='[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:date_joined:ok]' type='color' />
+          </strip>
+        </edge>
+      </cards>
+      <viewpoint>
+        <highlight>
+          <color-one-way>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[none:consumer_id:nk]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:date_joined:ok]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:redeem_date:ok]</field>
+            <field>[federated.1bq6cc301lafob1gwgc8h1w3hmkr].[yr:selection_date:ok]</field>
+          </color-one-way>
+        </highlight>
+      </viewpoint>
+    </window>
+  </windows>
+  <thumbnails>
+    <thumbnail height='192' name='Sheet 1' width='192'>
+      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
+    </thumbnail>
+    <thumbnail height='192' name='Sheet 2' width='192'>
+      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
+    </thumbnail>
+  </thumbnails>
+</workbook>
